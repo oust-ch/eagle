@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart';
+
+abstract class EagleTypo {
+  static const TextStyle header1 = TextStyle(
+      fontSize: EagleFontSize.xl4,
+      fontWeight: FontWeight.bold,
+      height: EagleLineHeight.loose);
+  static const TextStyle header2 = TextStyle(
+      fontSize: EagleFontSize.xl3,
+      fontWeight: FontWeight.bold,
+      height: EagleLineHeight.loose);
+  static const TextStyle header3 = TextStyle(
+      fontSize: EagleFontSize.xl2,
+      fontWeight: FontWeight.bold,
+      height: EagleLineHeight.relaxed);
+  static const TextStyle header4 = TextStyle(
+      fontSize: EagleFontSize.xl,
+      fontWeight: FontWeight.bold,
+      height: EagleLineHeight.relaxed);
+  static const TextStyle subheader = TextStyle(fontSize: EagleFontSize.lg);
+
+  static const TextStyle textM = TextStyle(fontSize: EagleFontSize.md);
+  static const TextStyle textMBold =
+      TextStyle(fontSize: EagleFontSize.md, fontWeight: FontWeight.bold);
+
+  static const TextStyle textS = TextStyle(fontSize: EagleFontSize.sm);
+  static const TextStyle textSBold =
+      TextStyle(fontSize: EagleFontSize.sm, fontWeight: FontWeight.bold);
+}
+
+abstract class EagleFontSize {
+  static const xs = 10.0;
+  static const sm = 12.0;
+  static const md = 14.0;
+  static const lg = 16.0;
+  static const xl = 18.0;
+  static const xl2 = 22.0;
+  static const xl3 = 28.0;
+  static const xl4 = 36.0;
+}
+
+abstract class EagleLineHeight {
+  static const none = 1.0;
+  static const tight = 1.25;
+  static const snug = 1.375;
+  static const normal = 1.5;
+  static const relaxed = 1.625;
+  static const loose = 2.0;
+}
