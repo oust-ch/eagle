@@ -39,6 +39,7 @@ abstract class EagleFontSize {
   static const xl4 = 36.0;
 }
 
+// TODO: Check and adjust line heights
 abstract class EagleLineHeight {
   static const none = 1.0;
   static const tight = 1.25;
@@ -46,4 +47,16 @@ abstract class EagleLineHeight {
   static const normal = 1.5;
   static const relaxed = 1.625;
   static const loose = 2.0;
+}
+
+abstract class EagleColors {
+  // Primary Color
+  static const oustBlendMain = Color(0xFF15C16D);
+  static const oustBlendSurface = Color(0xFFE3FCF1);
+  static const oustBlendBorder = Color(0xFF94DBBA);
+  static const oustBlendHover = Color(0xFF006F59);
+  static const oustBlendPressed = Color(0xFF00574B);
+
+  static const oustGreen = Color(0xFF21C052);
+  static const oustTeal = Color(0xFFE0E9C74);
 }
