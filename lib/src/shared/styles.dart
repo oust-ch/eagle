@@ -59,4 +59,10 @@ abstract class EagleColors {
 
   static const oustGreen = Color(0xFF21C052);
   static const oustTeal = Color(0xFFE0E9C74);
+
+  static const oustGradient = LinearGradient(
+    colors: [EagleColors.oustTeal, EagleColors.oustGreen],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
 }

@@ -19,7 +19,7 @@ class ExampleView extends StatelessWidget {
   }
 
   List<Widget> get textWidgets => [
-        EagleText.header1('Header / 1'),
+        EagleText.header1('Header / 1', gradient: true),
         EagleText.header2('Header / 2'),
         EagleText.header3('Header / 3'),
         EagleText.header4('Header / 4'),
