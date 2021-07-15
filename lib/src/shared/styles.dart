@@ -53,7 +53,7 @@ abstract class EagleColors {
   // Primary Color
   static const oustBlendMain = Color(0xFF15C16D);
   static const oustBlendSurface = Color(0xFFE3FCF1);
-  static const oustBlendBorder = Color(0xFF94DBBA);
+  static const oustBlendBorder = Color(0xFFC8F9E4);
   static const oustBlendHover = Color(0xFF006F59);
   static const oustBlendPressed = Color(0xFF00574B);
 

@@ -32,6 +32,35 @@ class StoryBook extends StatelessWidget {
             ),
             children: [
               Story(
+                  name: 'Buttons',
+                  builder: (_, k) => Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            EagleButton(
+                                type: EagleButtonType.primary,
+                                onPressed: () {},
+                                busy: k.boolean(label: 'Busy'),
+                                text: k.text(
+                                    label: 'Button text', initial: 'Button')),
+                            SizedBox(height: 8),
+                            EagleButton(
+                                type: EagleButtonType.secondary,
+                                onPressed: () {},
+                                busy: k.boolean(label: 'Busy'),
+                                text: k.text(
+                                    label: 'Button text', initial: 'Button')),
+                            SizedBox(height: 8),
+                            EagleButton(
+                                type: EagleButtonType.tertiary,
+                                onPressed: () {},
+                                busy: k.boolean(label: 'Busy'),
+                                text: k.text(
+                                    label: 'Button text', initial: 'Button')),
+                          ],
+                        ),
+                      )),
+              Story(
                   name: 'Card',
                   builder: (_, k) => EagleCard(
                       child: Text(
