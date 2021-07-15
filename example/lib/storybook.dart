@@ -32,15 +32,10 @@ class StoryBook extends StatelessWidget {
             ),
             children: [
               Story(
-                  section: 'Typography',
-                  name: 'Header One',
-                  builder: (_, k) => EagleText.header1(
-                      k.text(label: 'Text', initial: 'Header 1'))),
-              Story(
-                  section: 'Typography',
-                  name: 'Header Two',
-                  builder: (_, k) => EagleText.header2(
-                      k.text(label: 'Text', initial: 'Header 2')))
+                  name: 'Card',
+                  builder: (_, k) => EagleCard(
+                      child: Text(
+                          k.text(label: 'Card content', initial: 'Hello')))),
             ],
           ),
         ),

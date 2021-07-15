@@ -66,3 +66,5 @@ abstract class EagleColors {
     end: Alignment.bottomRight,
   );
 }
+
+final double defaultRadius = 8.0;

@@ -6,15 +6,13 @@ class ExampleView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
-        children: [
-          EagleText.header1('Design System'),
-          Divider(),
-          ...textWidgets,
-        ],
-      ),
+    return ListView(
+      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
+      children: [
+        EagleText.header1('Design System'),
+        Divider(),
+        ...textWidgets,
+      ],
     );
   }
 
