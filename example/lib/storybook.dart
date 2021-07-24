@@ -1,4 +1,5 @@
 import 'package:eagle/eagle.dart';
+import 'package:example/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
@@ -40,6 +41,14 @@ class StoryBook extends StatelessWidget {
                             EagleButton(
                                 type: EagleButtonType.primary,
                                 onPressed: () {},
+                                leading: k.options(
+                                    label: 'Leading icon',
+                                    initial: null,
+                                    options: exampleIcons),
+                                trailing: k.options(
+                                    label: 'Trailing icon',
+                                    initial: null,
+                                    options: exampleIcons),
                                 busy: k.boolean(label: 'Busy'),
                                 text: k.text(
                                     label: 'Button text', initial: 'Button')),
@@ -47,6 +56,14 @@ class StoryBook extends StatelessWidget {
                             EagleButton(
                                 type: EagleButtonType.secondary,
                                 onPressed: () {},
+                                leading: k.options(
+                                    label: 'Leading icon',
+                                    initial: null,
+                                    options: exampleIcons),
+                                trailing: k.options(
+                                    label: 'Trailing icon',
+                                    initial: null,
+                                    options: exampleIcons),
                                 busy: k.boolean(label: 'Busy'),
                                 text: k.text(
                                     label: 'Button text', initial: 'Button')),
@@ -54,6 +71,14 @@ class StoryBook extends StatelessWidget {
                             EagleButton(
                                 type: EagleButtonType.tertiary,
                                 onPressed: () {},
+                                leading: k.options(
+                                    label: 'Leading icon',
+                                    initial: null,
+                                    options: exampleIcons),
+                                trailing: k.options(
+                                    label: 'Trailing icon',
+                                    initial: null,
+                                    options: exampleIcons),
                                 busy: k.boolean(label: 'Busy'),
                                 text: k.text(
                                     label: 'Button text', initial: 'Button')),

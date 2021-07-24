@@ -9,8 +9,8 @@ class EagleButton extends StatelessWidget {
   final EagleButtonType type;
   final bool busy;
   final void Function()? onPressed;
-  final Widget? leading;
-  final Widget? trailing;
+  final IconData? leading;
+  final IconData? trailing;
 
   const EagleButton(
       {required this.text,
@@ -95,8 +95,8 @@ class EagleBaseButton extends StatelessWidget {
   final String text;
   final bool busy;
   final void Function()? onPressed;
-  final Widget? leading;
-  final Widget? trailing;
+  final IconData? leading;
+  final IconData? trailing;
 
   final Color color;
   final Color textColor;
@@ -141,8 +141,22 @@ class EagleBaseButton extends StatelessWidget {
                     valueColor: AlwaysStoppedAnimation(textColor),
                   ),
                 )
-              : EagleText.textM(text,
-                  bold: true, selectable: false, color: textColor),
+              : Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (leading != null) ...[
+                      Icon(leading!, color: textColor, size: 16),
+                      SizedBox(width: 8)
+                    ],
+                    EagleText.textM(text,
+                        bold: true, selectable: false, color: textColor),
+                    if (trailing != null) ...[
+                      SizedBox(width: 8),
+                      Icon(trailing!, color: textColor, size: 16)
+                    ],
+                  ],
+                ),
         ));
   }
 }
