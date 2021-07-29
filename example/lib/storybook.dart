@@ -40,6 +40,12 @@ class StoryBook extends StatelessWidget {
                           children: [
                             EagleButton(
                                 type: EagleButtonType.primary,
+                                color: k.options(
+                                    label: 'Color',
+                                    initial: EagleButtonColor.brand,
+                                    options: EagleButtonColor.values
+                                        .map((x) => Option(x.toString(), x))
+                                        .toList()),
                                 onPressed: () {},
                                 leading: k.options(
                                     label: 'Leading icon',
@@ -55,6 +61,12 @@ class StoryBook extends StatelessWidget {
                             SizedBox(height: 8),
                             EagleButton(
                                 type: EagleButtonType.secondary,
+                                color: k.options(
+                                    label: 'Color',
+                                    initial: EagleButtonColor.brand,
+                                    options: EagleButtonColor.values
+                                        .map((x) => Option(x.toString(), x))
+                                        .toList()),
                                 onPressed: () {},
                                 leading: k.options(
                                     label: 'Leading icon',
@@ -70,6 +82,12 @@ class StoryBook extends StatelessWidget {
                             SizedBox(height: 8),
                             EagleButton(
                                 type: EagleButtonType.tertiary,
+                                color: k.options(
+                                    label: 'Color',
+                                    initial: EagleButtonColor.brand,
+                                    options: EagleButtonColor.values
+                                        .map((x) => Option(x.toString(), x))
+                                        .toList()),
                                 onPressed: () {},
                                 leading: k.options(
                                     label: 'Leading icon',
@@ -101,6 +119,7 @@ class StoryBook extends StatelessWidget {
                                   Option<EagleBadgeColor>(x.toString(), x))
                               .toList()),
                       bold: k.boolean(label: 'Bold', initial: false),
+                      squared: k.boolean(label: 'Squared', initial: false),
                       text: k.text(label: 'Badge content', initial: 'Hello'))),
             ],
           ),

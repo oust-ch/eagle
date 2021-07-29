@@ -1,12 +1,16 @@
 import 'package:eagle/eagle.dart';
 import 'package:eagle/src/shared/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:tailwind_colors/tailwind_colors.dart';
 
 enum EagleButtonType { primary, secondary, tertiary }
+
+enum EagleButtonColor { brand, red, orange }
 
 class EagleButton extends StatelessWidget {
   final String text;
   final EagleButtonType type;
+  final EagleButtonColor color;
   final bool busy;
   final void Function()? onPressed;
   final IconData? leading;
@@ -15,63 +19,169 @@ class EagleButton extends StatelessWidget {
   const EagleButton(
       {required this.text,
       this.type = EagleButtonType.primary,
+      this.color = EagleButtonColor.brand,
       this.busy = false,
       this.onPressed,
       this.leading,
       this.trailing});
 
   Color _color() {
-    switch (type) {
-      case EagleButtonType.primary:
-        return EagleColors.oustBlendMain;
-      case EagleButtonType.secondary:
-        return EagleColors.oustBlendSurface;
-      case EagleButtonType.tertiary:
-        return Colors.transparent;
+    switch (color) {
+      case EagleButtonColor.brand:
+        switch (type) {
+          case EagleButtonType.primary:
+            return EagleColors.oustBlendMain;
+          case EagleButtonType.secondary:
+            return EagleColors.oustBlendSurface;
+          case EagleButtonType.tertiary:
+            return Colors.transparent;
+        }
+      case EagleButtonColor.red:
+        switch (type) {
+          case EagleButtonType.primary:
+            return TWTwoColors.red.shade500;
+          case EagleButtonType.secondary:
+            return TWTwoColors.red.shade100;
+          case EagleButtonType.tertiary:
+            return Colors.transparent;
+        }
+      case EagleButtonColor.orange:
+        switch (type) {
+          case EagleButtonType.primary:
+            return TWTwoColors.amber.shade500;
+          case EagleButtonType.secondary:
+            return TWTwoColors.amber.shade100;
+          case EagleButtonType.tertiary:
+            return Colors.transparent;
+        }
     }
   }
 
   Color _textColor() {
-    switch (type) {
-      case EagleButtonType.primary:
-        return Colors.white;
-      case EagleButtonType.secondary:
-        return EagleColors.oustBlendMain;
-      case EagleButtonType.tertiary:
-        return EagleColors.oustBlendMain;
+    switch (color) {
+      case EagleButtonColor.brand:
+        switch (type) {
+          case EagleButtonType.primary:
+            return Colors.white;
+          case EagleButtonType.secondary:
+            return EagleColors.oustBlendMain;
+          case EagleButtonType.tertiary:
+            return EagleColors.oustBlendMain;
+        }
+      case EagleButtonColor.red:
+        switch (type) {
+          case EagleButtonType.primary:
+            return Colors.white;
+          case EagleButtonType.secondary:
+            return TWTwoColors.red.shade500;
+          case EagleButtonType.tertiary:
+            return TWTwoColors.red.shade500;
+        }
+      case EagleButtonColor.orange:
+        switch (type) {
+          case EagleButtonType.primary:
+            return Colors.white;
+          case EagleButtonType.secondary:
+            return TWTwoColors.amber.shade500;
+          case EagleButtonType.tertiary:
+            return TWTwoColors.amber.shade500;
+        }
     }
   }
 
   Color _hoverColor() {
-    switch (type) {
-      case EagleButtonType.primary:
-        return EagleColors.oustBlendHover;
-      case EagleButtonType.secondary:
-        return EagleColors.oustBlendBorder;
-      case EagleButtonType.tertiary:
-        return EagleColors.oustBlendSurface;
+    switch (color) {
+      case EagleButtonColor.brand:
+        switch (type) {
+          case EagleButtonType.primary:
+            return EagleColors.oustBlendHover;
+          case EagleButtonType.secondary:
+            return EagleColors.oustBlendBorder;
+          case EagleButtonType.tertiary:
+            return EagleColors.oustBlendSurface;
+        }
+      case EagleButtonColor.red:
+        switch (type) {
+          case EagleButtonType.primary:
+            return TWTwoColors.red.shade700;
+          case EagleButtonType.secondary:
+            return TWTwoColors.red.shade200;
+          case EagleButtonType.tertiary:
+            return TWTwoColors.red.shade100;
+        }
+      case EagleButtonColor.orange:
+        switch (type) {
+          case EagleButtonType.primary:
+            return TWTwoColors.amber.shade700;
+          case EagleButtonType.secondary:
+            return TWTwoColors.amber.shade200;
+          case EagleButtonType.tertiary:
+            return TWTwoColors.amber.shade100;
+        }
     }
   }
 
   Color _highlightColor() {
-    switch (type) {
-      case EagleButtonType.primary:
-        return EagleColors.oustBlendPressed;
-      case EagleButtonType.secondary:
-        return EagleColors.oustBlendBorder;
-      case EagleButtonType.tertiary:
-        return EagleColors.oustBlendBorder;
+    switch (color) {
+      case EagleButtonColor.brand:
+        switch (type) {
+          case EagleButtonType.primary:
+            return EagleColors.oustBlendPressed;
+          case EagleButtonType.secondary:
+            return EagleColors.oustBlendBorder;
+          case EagleButtonType.tertiary:
+            return EagleColors.oustBlendBorder;
+        }
+      case EagleButtonColor.red:
+        switch (type) {
+          case EagleButtonType.primary:
+            return TWTwoColors.red.shade900;
+          case EagleButtonType.secondary:
+            return TWTwoColors.red.shade300;
+          case EagleButtonType.tertiary:
+            return TWTwoColors.red.shade200;
+        }
+      case EagleButtonColor.orange:
+        switch (type) {
+          case EagleButtonType.primary:
+            return TWTwoColors.amber.shade900;
+          case EagleButtonType.secondary:
+            return TWTwoColors.amber.shade300;
+          case EagleButtonType.tertiary:
+            return TWTwoColors.amber.shade200;
+        }
     }
   }
 
   BorderSide _side() {
-    switch (type) {
-      case EagleButtonType.primary:
-        return BorderSide.none;
-      case EagleButtonType.secondary:
-        return BorderSide(color: EagleColors.oustBlendBorder);
-      case EagleButtonType.tertiary:
-        return BorderSide.none;
+    switch (color) {
+      case EagleButtonColor.brand:
+        switch (type) {
+          case EagleButtonType.primary:
+            return BorderSide.none;
+          case EagleButtonType.secondary:
+            return BorderSide(color: EagleColors.oustBlendBorder);
+          case EagleButtonType.tertiary:
+            return BorderSide.none;
+        }
+      case EagleButtonColor.red:
+        switch (type) {
+          case EagleButtonType.primary:
+            return BorderSide.none;
+          case EagleButtonType.secondary:
+            return BorderSide(color: TWTwoColors.red.shade200);
+          case EagleButtonType.tertiary:
+            return BorderSide.none;
+        }
+      case EagleButtonColor.orange:
+        switch (type) {
+          case EagleButtonType.primary:
+            return BorderSide.none;
+          case EagleButtonType.secondary:
+            return BorderSide(color: TWTwoColors.amber.shade200);
+          case EagleButtonType.tertiary:
+            return BorderSide.none;
+        }
     }
   }
 
