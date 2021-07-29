@@ -90,6 +90,18 @@ class StoryBook extends StatelessWidget {
                   builder: (_, k) => EagleCard(
                       child: Text(
                           k.text(label: 'Card content', initial: 'Hello')))),
+              Story(
+                  name: 'Badge',
+                  builder: (_, k) => EagleBadge(
+                      color: k.options(
+                          label: 'Color',
+                          initial: EagleBadgeColor.green,
+                          options: EagleBadgeColor.values
+                              .map((x) =>
+                                  Option<EagleBadgeColor>(x.toString(), x))
+                              .toList()),
+                      bold: k.boolean(label: 'Bold', initial: false),
+                      text: k.text(label: 'Badge content', initial: 'Hello'))),
             ],
           ),
         ),

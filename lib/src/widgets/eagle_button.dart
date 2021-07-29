@@ -49,7 +49,7 @@ class EagleButton extends StatelessWidget {
       case EagleButtonType.secondary:
         return EagleColors.oustBlendBorder;
       case EagleButtonType.tertiary:
-        return EagleColors.oustBlendBorder;
+        return EagleColors.oustBlendSurface;
     }
   }
 

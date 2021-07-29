@@ -17,7 +17,8 @@ abstract class EagleTypo {
       fontSize: EagleFontSize.xl,
       fontWeight: FontWeight.bold,
       height: EagleLineHeight.relaxed);
-  static const TextStyle subheader = TextStyle(fontSize: EagleFontSize.lg);
+  static const TextStyle subtitle2 = TextStyle(fontSize: EagleFontSize.lg);
+  static const TextStyle subtitle1 = TextStyle(fontSize: EagleFontSize.xl);
 
   static const TextStyle textM = TextStyle(fontSize: EagleFontSize.md);
   static const TextStyle textMBold =

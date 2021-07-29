@@ -2,6 +2,8 @@ import 'package:eagle/src/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+const blueGray900 = Color(0xff0f172a);
+
 class EagleText extends StatelessWidget {
   final String text;
   final TextStyle style;
@@ -11,49 +13,50 @@ class EagleText extends StatelessWidget {
   EagleText.header1(this.text,
       {this.gradient = false,
       this.selectable = true,
-      Color color = Colors.blueGrey})
+      Color color = blueGray900})
       : style = GoogleFonts.poppins(
             textStyle: EagleTypo.header1.copyWith(color: color));
 
   EagleText.header2(this.text,
       {this.gradient = false,
       this.selectable = true,
-      Color color = Colors.blueGrey})
+      Color color = blueGray900})
       : style = GoogleFonts.poppins(
             textStyle: EagleTypo.header2.copyWith(color: color));
 
   EagleText.header3(this.text,
       {this.gradient = false,
       this.selectable = true,
-      Color color = Colors.blueGrey})
+      Color color = blueGray900})
       : style = GoogleFonts.poppins(
             textStyle: EagleTypo.header3.copyWith(color: color));
 
   EagleText.header4(this.text,
       {this.gradient = false,
       this.selectable = true,
-      Color color = Colors.blueGrey})
+      Color color = blueGray900})
       : style = GoogleFonts.poppins(textStyle: EagleTypo.header4)
             .copyWith(color: color);
 
-  EagleText.subtitle(this.text,
-      {this.selectable = true, Color color = Colors.blueGrey})
+  EagleText.subtitle1(this.text,
+      {this.selectable = true, Color color = blueGray900})
       : style = GoogleFonts.poppins(
-            textStyle: EagleTypo.subheader.copyWith(color: color));
+            textStyle: EagleTypo.subtitle1.copyWith(color: color));
+
+  EagleText.subtitle2(this.text,
+      {this.selectable = true, Color color = blueGray900})
+      : style = GoogleFonts.poppins(
+            textStyle: EagleTypo.subtitle2.copyWith(color: color));
 
   EagleText.textM(this.text,
-      {bool bold = false,
-      this.selectable = true,
-      Color color = Colors.blueGrey})
+      {bool bold = false, this.selectable = true, Color color = blueGray900})
       : style = GoogleFonts.inter(
             textStyle: bold
                 ? EagleTypo.textMBold.copyWith(color: color)
                 : EagleTypo.textM.copyWith(color: color));
 
   EagleText.textS(this.text,
-      {bool bold = false,
-      this.selectable = true,
-      Color color = Colors.blueGrey})
+      {bool bold = false, this.selectable = true, Color color = blueGray900})
       : style = GoogleFonts.inter(
             textStyle: bold
                 ? EagleTypo.textSBold.copyWith(color: color)
