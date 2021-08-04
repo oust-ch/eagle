@@ -40,12 +40,14 @@ class StoryBook extends StatelessWidget {
                           children: [
                             EagleButton(
                                 type: EagleButtonType.primary,
+                                disableIfNoConnection: true,
                                 color: k.options(
                                     label: 'Color',
                                     initial: EagleButtonColor.brand,
                                     options: EagleButtonColor.values
                                         .map((x) => Option(x.toString(), x))
                                         .toList()),
+                                disabled: k.boolean(label: 'Disabled'),
                                 onPressed: () {},
                                 leading: k.options(
                                     label: 'Leading icon',
@@ -61,6 +63,7 @@ class StoryBook extends StatelessWidget {
                             SizedBox(height: 8),
                             EagleButton(
                                 type: EagleButtonType.secondary,
+                                disableIfNoConnection: true,
                                 color: k.options(
                                     label: 'Color',
                                     initial: EagleButtonColor.brand,
@@ -68,6 +71,7 @@ class StoryBook extends StatelessWidget {
                                         .map((x) => Option(x.toString(), x))
                                         .toList()),
                                 onPressed: () {},
+                                disabled: k.boolean(label: 'Disabled'),
                                 leading: k.options(
                                     label: 'Leading icon',
                                     initial: null,
@@ -82,6 +86,7 @@ class StoryBook extends StatelessWidget {
                             SizedBox(height: 8),
                             EagleButton(
                                 type: EagleButtonType.tertiary,
+                                disableIfNoConnection: true,
                                 color: k.options(
                                     label: 'Color',
                                     initial: EagleButtonColor.brand,
@@ -89,6 +94,7 @@ class StoryBook extends StatelessWidget {
                                         .map((x) => Option(x.toString(), x))
                                         .toList()),
                                 onPressed: () {},
+                                disabled: k.boolean(label: 'Disabled'),
                                 leading: k.options(
                                     label: 'Leading icon',
                                     initial: null,
