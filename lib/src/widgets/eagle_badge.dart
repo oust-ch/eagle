@@ -50,6 +50,11 @@ class EagleBadge extends StatelessWidget {
         decoration: BoxDecoration(
             color: _backgroundColor(),
             borderRadius: BorderRadius.all(Radius.circular(squared ? 4 : 40))),
-        child: EagleText.textS(text, bold: bold, color: _color()));
+        child: EagleText.textS(
+          text,
+          bold: bold,
+          color: _color(),
+          selectable: false,
+        ));
   }
 }
