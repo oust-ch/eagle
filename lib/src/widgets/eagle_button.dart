@@ -18,6 +18,7 @@ class EagleButton extends StatelessWidget {
   final void Function()? onPressed;
   final IconData? leading;
   final IconData? trailing;
+  final EdgeInsetsGeometry padding;
 
   const EagleButton(
       {required this.text,
@@ -28,7 +29,8 @@ class EagleButton extends StatelessWidget {
       this.disableIfNoConnection = false,
       this.onPressed,
       this.leading,
-      this.trailing});
+      this.trailing,
+      this.padding = const EdgeInsets.all(8.0)});
 
   Color _color() {
     switch (color) {
@@ -222,6 +224,7 @@ class EagleButton extends StatelessWidget {
         onPressed: onPressed,
         leading: leading,
         trailing: trailing,
+        padding: padding,
         color: _color(),
         textColor: _textColor(),
         hoverColor: _hoverColor(),
@@ -248,6 +251,7 @@ class EagleBaseButton extends StatefulWidget {
   final Color disabledColor;
   final Color disabledTextColor;
   final BorderSide side;
+  final EdgeInsetsGeometry padding;
 
   const EagleBaseButton(
       {required this.text,
@@ -261,6 +265,7 @@ class EagleBaseButton extends StatefulWidget {
       this.busy = false,
       this.disabled = false,
       this.disableIfNoConnection = false,
+      this.padding = const EdgeInsets.all(8.0),
       this.onPressed,
       this.leading,
       this.trailing});
@@ -301,7 +306,7 @@ class _EagleBaseButtonState extends State<EagleBaseButton> {
             side: widget.side,
             borderRadius: BorderRadius.circular(defaultRadius)),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: widget.padding,
           child: widget.busy
               ? SizedBox(
                   height: 17,
