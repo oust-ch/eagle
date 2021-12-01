@@ -14,7 +14,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _selectedIndex = 0;
-  List<Widget> tabs = [ExampleView(), StoryBook()];
+  List<Widget> tabs = [StoryBook(), ExampleView()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -30,8 +30,10 @@ class _MyAppState extends State<MyApp> {
         body: tabs.elementAt(_selectedIndex),
         bottomNavigationBar: BottomNavigationBar(
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.list), label: 'List'),
-            BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Storybook')
+            BottomNavigationBarItem(
+                icon: Icon(Icons.book), label: 'Components'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.list), label: 'Typography'),
           ],
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
