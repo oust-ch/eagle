@@ -1,4 +1,3 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:eagle/eagle.dart';
 import 'package:eagle/src/shared/styles.dart';
 import 'package:flutter/material.dart';

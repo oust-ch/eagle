@@ -13,7 +13,7 @@ dependencies:
 
   google_fonts: ^2.1.0
   tailwind_colors: ^0.3.0-nullsafety.1
-  connectivity_plus: ^2.1.0
+  # connectivity_plus: ^2.1.0
 
 dev_dependencies:
   flutter_lints: ^1.0.4
