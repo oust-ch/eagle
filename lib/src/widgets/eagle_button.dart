@@ -275,7 +275,8 @@ class EagleBaseButton extends StatefulWidget {
 }
 
 class _EagleBaseButtonState extends State<EagleBaseButton> {
-  bool hasNoInternet = true;
+  // TODO: Reset to true when reenabling connectivity
+  bool hasNoInternet = false;
   var connectivitySubscription;
 
   bool get isDisabledBecauseNotConnected =>
@@ -344,29 +345,29 @@ class _EagleBaseButtonState extends State<EagleBaseButton> {
         ));
   }
 
-  @override
-  void initState() {
-    super.initState();
+  // @override
+  // void initState() {
+  //   super.initState();
 
-    Connectivity().checkConnectivity().then((ConnectivityResult result) {
-      setConnectivity(result);
-    });
+  //   Connectivity().checkConnectivity().then((ConnectivityResult result) {
+  //     setConnectivity(result);
+  //   });
 
-    connectivitySubscription = Connectivity()
-        .onConnectivityChanged
-        .listen((ConnectivityResult result) {});
-  }
+  //   connectivitySubscription = Connectivity()
+  //       .onConnectivityChanged
+  //       .listen((ConnectivityResult result) {});
+  // }
 
-  void setConnectivity(ConnectivityResult result) {
-    setState(() {
-      hasNoInternet = result == ConnectivityResult.none;
-    });
-  }
+  // void setConnectivity(ConnectivityResult result) {
+  //   setState(() {
+  //     hasNoInternet = result == ConnectivityResult.none;
+  //   });
+  // }
 
-  // Be sure to cancel subscription after you are done
-  @override
-  void dispose() {
-    super.dispose();
-    connectivitySubscription.cancel();
-  }
+  // // Be sure to cancel subscription after you are done
+  // @override
+  // void dispose() {
+  //   super.dispose();
+  //   connectivitySubscription.cancel();
+  // }
 }
