@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:eagle/src/shared/styles.dart';
 
-const blueGray200 = Color(0xffe2e8f0);
+const blueGray200 = Color(0xffcbd5e1);
 
 class EagleCard extends StatelessWidget {
   final Widget child;
