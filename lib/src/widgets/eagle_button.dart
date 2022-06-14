@@ -328,13 +328,15 @@ class _EagleBaseButtonState extends State<EagleBaseButton> {
                       Icon(Icons.cloud_off, color: currentTextColor, size: 16),
                       SizedBox(width: 8)
                     ],
-                    EagleText.textM(
-                        isDisabledBecauseNotConnected
-                            ? 'Pas de connexion'
-                            : widget.text,
-                        bold: true,
-                        selectable: false,
-                        color: currentTextColor),
+                    Flexible(
+                      child: EagleText.textM(
+                          isDisabledBecauseNotConnected
+                              ? 'Pas de connexion'
+                              : widget.text,
+                          bold: true,
+                          selectable: false,
+                          color: currentTextColor),
+                    ),
                     if (widget.trailing != null) ...[
                       SizedBox(width: 8),
                       Icon(widget.trailing!, color: currentTextColor, size: 16)

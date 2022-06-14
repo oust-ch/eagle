@@ -4,14 +4,14 @@ version: 0.0.1
 homepage:
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  google_fonts: ^2.1.0
+  google_fonts: ^2.3.1
   tailwind_colors: ^0.3.0-nullsafety.1
   # connectivity_plus: ^2.1.0
 

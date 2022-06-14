@@ -129,6 +129,13 @@ class StoryBook extends StatelessWidget {
                           label: 'Card content',
                           initial:
                               'Maecenas faucibus quam elit, quis dictum leo aliquet sed. Cras ornare porttitor dolor, et fringilla magna consectetur non. Pellentesque at nisi lobortis, iaculis dui ut, condimentum nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis nec leo id interdum. Mauris vestibulum quam vel lacus lacinia pharetra. Phasellus luctus tristique ex, eu efficitur metus dignissim eu. Duis gravida pulvinar neque, sit amet sollicitudin nulla egestas ac. Cras sed urna at lorem ornare dapibus vestibulum feugiat arcu. In venenatis dolor dignissim sollicitudin fermentum.')))),
+              Story(
+                  name: 'Selectable',
+                  builder: (_, k) => EagleSelectableItem(
+                      selected: k.boolean(label: 'Selected', initial: false),
+                      onPressed: () {},
+                      child: Text(
+                          'Maecenas faucibus quam elit, quis dictum leo aliquet sed. Cras ornare porttitor dolor, et fringilla magna consectetur non. Pellentesque at nisi lobortis, iaculis dui ut, condimentum nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis nec leo id interdum. Mauris vestibulum quam vel lacus lacinia pharetra. Phasellus luctus tristique ex, eu efficitur metus dignissim eu. Duis gravida pulvinar neque, sit amet sollicitudin nulla egestas ac. Cras sed urna at lorem ornare dapibus vestibulum feugiat arcu. In venenatis dolor dignissim sollicitudin fermentum.'))),
             ],
           ),
         ),

@@ -5,4 +5,5 @@ export 'src/widgets/eagle_card.dart';
 export 'src/widgets/eagle_button.dart';
 export 'src/widgets/eagle_spacing.dart';
 export 'src/widgets/eagle_badge.dart';
+export 'src/widgets/eagle_selectable.dart';
 export 'src/shared/styles.dart';
