@@ -5,12 +5,13 @@ const blueGray200 = Color(0xffcbd5e1);
 
 class EagleCard extends StatelessWidget {
   final Widget child;
-  void Function()? onTap;
-  Color borderColor;
-  EdgeInsetsGeometry padding;
+  final void Function()? onTap;
+  final Color borderColor;
+  final EdgeInsetsGeometry padding;
 
-  EagleCard(
-      {required this.child,
+  const EagleCard(
+      {super.key,
+      required this.child,
       this.onTap,
       this.padding = const EdgeInsets.all(16),
       this.borderColor = blueGray200});
