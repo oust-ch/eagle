@@ -11,8 +11,9 @@ class EagleBadge extends StatelessWidget {
   final bool bold;
   final bool squared;
 
-  EagleBadge(
-      {required this.text,
+  const EagleBadge(
+      {super.key,
+      required this.text,
       this.color = EagleBadgeColor.green,
       this.bold = false,
       this.squared = false});

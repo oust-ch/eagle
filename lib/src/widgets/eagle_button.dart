@@ -1,6 +1,6 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
+import 'dart:async';
+
 import 'package:eagle/eagle.dart';
-import 'package:eagle/src/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
@@ -21,7 +21,8 @@ class EagleButton extends StatelessWidget {
   final EdgeInsetsGeometry padding;
 
   const EagleButton(
-      {required this.text,
+      {super.key,
+      required this.text,
       this.type = EagleButtonType.primary,
       this.color = EagleButtonColor.brand,
       this.busy = false,
@@ -189,7 +190,7 @@ class EagleButton extends StatelessWidget {
           case EagleButtonType.primary:
             return BorderSide.none;
           case EagleButtonType.secondary:
-            return BorderSide(color: EagleColors.oustBlendBorder);
+            return const BorderSide(color: EagleColors.oustBlendBorder);
           case EagleButtonType.tertiary:
             return BorderSide.none;
         }
@@ -254,7 +255,8 @@ class EagleBaseButton extends StatefulWidget {
   final EdgeInsetsGeometry padding;
 
   const EagleBaseButton(
-      {required this.text,
+      {super.key,
+      required this.text,
       required this.color,
       required this.textColor,
       required this.hoverColor,
@@ -277,7 +279,7 @@ class EagleBaseButton extends StatefulWidget {
 class _EagleBaseButtonState extends State<EagleBaseButton> {
   // TODO: Reset to true when reenabling connectivity
   bool hasNoInternet = false;
-  var connectivitySubscription;
+  StreamSubscription? connectivitySubscription;
 
   bool get isDisabledBecauseNotConnected =>
       widget.disableIfNoConnection && hasNoInternet;
@@ -323,21 +325,23 @@ class _EagleBaseButtonState extends State<EagleBaseButton> {
                   children: [
                     if (widget.leading != null) ...[
                       Icon(widget.leading!, color: currentTextColor, size: 16),
-                      SizedBox(width: 8)
+                      const SizedBox(width: 8)
                     ],
                     if (isDisabledBecauseNotConnected) ...[
                       Icon(Icons.cloud_off, color: currentTextColor, size: 16),
-                      SizedBox(width: 8)
+                      const SizedBox(width: 8)
                     ],
-                    EagleText.textM(
-                        isDisabledBecauseNotConnected
-                            ? 'Pas de connexion'
-                            : widget.text,
-                        bold: true,
-                        selectable: false,
-                        color: currentTextColor),
+                    Flexible(
+                      child: EagleText.textM(
+                          isDisabledBecauseNotConnected
+                              ? 'Pas de connexion'
+                              : widget.text,
+                          bold: true,
+                          selectable: false,
+                          color: currentTextColor),
+                    ),
                     if (widget.trailing != null) ...[
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       Icon(widget.trailing!, color: currentTextColor, size: 16)
                     ],
                   ],

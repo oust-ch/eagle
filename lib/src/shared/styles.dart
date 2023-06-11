@@ -68,4 +68,4 @@ abstract class EagleColors {
   );
 }
 
-final double defaultRadius = 8.0;
+const double defaultRadius = 8.0;

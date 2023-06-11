@@ -10,67 +10,85 @@ class EagleText extends StatelessWidget {
   bool gradient = false;
   bool selectable = true;
   TextAlign textAlign;
+  TextOverflow overflow;
 
   EagleText.header1(this.text,
-      {this.gradient = false,
+      {super.key,
+      this.gradient = false,
       this.selectable = true,
       this.textAlign = TextAlign.start,
+      this.overflow = TextOverflow.clip,
       Color color = blueGray900})
       : style = GoogleFonts.poppins(
             textStyle: EagleTypo.header1.copyWith(color: color));
 
   EagleText.header2(this.text,
-      {this.gradient = false,
+      {super.key,
+      this.gradient = false,
       this.selectable = true,
       this.textAlign = TextAlign.start,
+      this.overflow = TextOverflow.clip,
       Color color = blueGray900})
       : style = GoogleFonts.poppins(
             textStyle: EagleTypo.header2.copyWith(color: color));
 
   EagleText.header3(this.text,
-      {this.gradient = false,
+      {super.key,
+      this.gradient = false,
       this.selectable = true,
       this.textAlign = TextAlign.start,
+      this.overflow = TextOverflow.clip,
       Color color = blueGray900})
       : style = GoogleFonts.poppins(
             textStyle: EagleTypo.header3.copyWith(color: color));
 
   EagleText.header4(this.text,
-      {this.gradient = false,
+      {super.key,
+      this.gradient = false,
       this.selectable = true,
       this.textAlign = TextAlign.start,
+      this.overflow = TextOverflow.clip,
       Color color = blueGray900})
       : style = GoogleFonts.poppins(textStyle: EagleTypo.header4)
             .copyWith(color: color);
 
   EagleText.subtitle1(this.text,
-      {this.selectable = true,
+      {super.key,
+      this.selectable = true,
       this.textAlign = TextAlign.start,
+      this.overflow = TextOverflow.clip,
       Color color = blueGray900})
       : style = GoogleFonts.poppins(
             textStyle: EagleTypo.subtitle1.copyWith(color: color));
 
   EagleText.subtitle2(this.text,
-      {this.selectable = true,
+      {super.key,
+      this.selectable = true,
       this.textAlign = TextAlign.start,
+      this.overflow = TextOverflow.clip,
       Color color = blueGray900})
       : style = GoogleFonts.poppins(
             textStyle: EagleTypo.subtitle2.copyWith(color: color));
 
-  EagleText.textM(this.text,
-      {bool bold = false,
-      this.selectable = true,
-      this.textAlign = TextAlign.start,
-      Color color = blueGray900})
-      : style = GoogleFonts.inter(
+  EagleText.textM(
+    this.text, {
+    super.key,
+    bool bold = false,
+    this.selectable = true,
+    this.textAlign = TextAlign.start,
+    this.overflow = TextOverflow.clip,
+    Color color = blueGray900,
+  }) : style = GoogleFonts.inter(
             textStyle: bold
                 ? EagleTypo.textMBold.copyWith(color: color)
                 : EagleTypo.textM.copyWith(color: color));
 
   EagleText.textS(this.text,
-      {bool bold = false,
+      {super.key,
+      bool bold = false,
       this.selectable = true,
       this.textAlign = TextAlign.start,
+      this.overflow = TextOverflow.clip,
       Color color = blueGray900})
       : style = GoogleFonts.inter(
             textStyle: bold
@@ -85,7 +103,8 @@ class EagleText extends StatelessWidget {
     if (selectable) {
       textWidget = SelectableText(text, style: textStyle, textAlign: textAlign);
     } else {
-      textWidget = Text(text, style: textStyle, textAlign: textAlign);
+      textWidget = Text(text,
+          style: textStyle, textAlign: textAlign, overflow: overflow);
     }
 
     if (!gradient) {
