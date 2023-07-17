@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  google_fonts: 4.0.4
+  google_fonts: ^5.1.0
   tailwind_colors: ^0.3.0-nullsafety.1
   # connectivity_plus: ^2.1.0
 
