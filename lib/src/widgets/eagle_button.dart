@@ -287,7 +287,8 @@ class _EagleBaseButtonState extends State<EagleBaseButton> {
   bool get isDisabled =>
       isDisabledBecauseNotConnected ||
       widget.onPressed == null ||
-      widget.disabled;
+      widget.disabled ||
+      widget.busy;
 
   Color get currentTextColor =>
       isDisabled ? widget.disabledTextColor : widget.textColor;
