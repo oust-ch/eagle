@@ -54,21 +54,27 @@ class EagleText extends StatelessWidget {
 
   EagleText.subtitle1(this.text,
       {super.key,
+      bool bold = false,
       this.selectable = true,
       this.textAlign = TextAlign.start,
       this.overflow = TextOverflow.clip,
       Color color = blueGray900})
       : style = GoogleFonts.poppins(
-            textStyle: EagleTypo.subtitle1.copyWith(color: color));
+            textStyle: bold
+                ? EagleTypo.subtitle1Bold.copyWith(color: color)
+                : EagleTypo.subtitle1.copyWith(color: color));
 
   EagleText.subtitle2(this.text,
       {super.key,
+      bool bold = false,
       this.selectable = true,
       this.textAlign = TextAlign.start,
       this.overflow = TextOverflow.clip,
       Color color = blueGray900})
       : style = GoogleFonts.poppins(
-            textStyle: EagleTypo.subtitle2.copyWith(color: color));
+            textStyle: bold
+                ? EagleTypo.subtitle2Bold.copyWith(color: color)
+                : EagleTypo.subtitle2.copyWith(color: color));
 
   EagleText.textM(
     this.text, {
