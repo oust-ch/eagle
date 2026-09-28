@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+abstract class EagleFonts {
+  // Bundled rather than fetched through google_fonts: on web a runtime fetch lands after the
+  // first frame and the text visibly swaps font. Package fonts are addressed by this prefix.
+  static const poppins = 'packages/eagle/Poppins';
+  static const inter = 'packages/eagle/Inter';
+}
+
 abstract class EagleTypo {
   static const TextStyle header1 = TextStyle(
       fontSize: EagleFontSize.xl4,
