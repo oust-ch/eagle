@@ -1,8 +1,15 @@
 import 'package:eagle/src/shared/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 const blueGray900 = Color(0xff0f172a);
+
+// Poppins has no arrows or check marks; falling back to Inter avoids a Noto download on web.
+TextStyle _poppins(TextStyle style) => style.copyWith(
+    fontFamily: EagleFonts.poppins,
+    fontFamilyFallback: const [EagleFonts.inter]);
+
+TextStyle _inter(TextStyle style) =>
+    style.copyWith(fontFamily: EagleFonts.inter);
 
 class EagleText extends StatelessWidget {
   final String text;
@@ -19,8 +26,7 @@ class EagleText extends StatelessWidget {
       this.textAlign = TextAlign.start,
       this.overflow = TextOverflow.clip,
       Color color = blueGray900})
-      : style = GoogleFonts.poppins(
-            textStyle: EagleTypo.header1.copyWith(color: color));
+      : style = _poppins(EagleTypo.header1.copyWith(color: color));
 
   EagleText.header2(this.text,
       {super.key,
@@ -29,8 +35,7 @@ class EagleText extends StatelessWidget {
       this.textAlign = TextAlign.start,
       this.overflow = TextOverflow.clip,
       Color color = blueGray900})
-      : style = GoogleFonts.poppins(
-            textStyle: EagleTypo.header2.copyWith(color: color));
+      : style = _poppins(EagleTypo.header2.copyWith(color: color));
 
   EagleText.header3(this.text,
       {super.key,
@@ -39,8 +44,7 @@ class EagleText extends StatelessWidget {
       this.textAlign = TextAlign.start,
       this.overflow = TextOverflow.clip,
       Color color = blueGray900})
-      : style = GoogleFonts.poppins(
-            textStyle: EagleTypo.header3.copyWith(color: color));
+      : style = _poppins(EagleTypo.header3.copyWith(color: color));
 
   EagleText.header4(this.text,
       {super.key,
@@ -49,7 +53,7 @@ class EagleText extends StatelessWidget {
       this.textAlign = TextAlign.start,
       this.overflow = TextOverflow.clip,
       Color color = blueGray900})
-      : style = GoogleFonts.poppins(textStyle: EagleTypo.header4)
+      : style = _poppins(EagleTypo.header4)
             .copyWith(color: color);
 
   EagleText.subtitle1(this.text,
@@ -59,8 +63,7 @@ class EagleText extends StatelessWidget {
       this.textAlign = TextAlign.start,
       this.overflow = TextOverflow.clip,
       Color color = blueGray900})
-      : style = GoogleFonts.poppins(
-            textStyle: bold
+      : style = _poppins(bold
                 ? EagleTypo.subtitle1Bold.copyWith(color: color)
                 : EagleTypo.subtitle1.copyWith(color: color));
 
@@ -71,8 +74,7 @@ class EagleText extends StatelessWidget {
       this.textAlign = TextAlign.start,
       this.overflow = TextOverflow.clip,
       Color color = blueGray900})
-      : style = GoogleFonts.poppins(
-            textStyle: bold
+      : style = _poppins(bold
                 ? EagleTypo.subtitle2Bold.copyWith(color: color)
                 : EagleTypo.subtitle2.copyWith(color: color));
 
@@ -84,8 +86,7 @@ class EagleText extends StatelessWidget {
     this.textAlign = TextAlign.start,
     this.overflow = TextOverflow.clip,
     Color color = blueGray900,
-  }) : style = GoogleFonts.inter(
-            textStyle: bold
+  }) : style = _inter(bold
                 ? EagleTypo.textMBold.copyWith(color: color)
                 : EagleTypo.textM.copyWith(color: color));
 
@@ -96,8 +97,7 @@ class EagleText extends StatelessWidget {
       this.textAlign = TextAlign.start,
       this.overflow = TextOverflow.clip,
       Color color = blueGray900})
-      : style = GoogleFonts.inter(
-            textStyle: bold
+      : style = _inter(bold
                 ? EagleTypo.textSBold.copyWith(color: color)
                 : EagleTypo.textS.copyWith(color: color));
   @override
